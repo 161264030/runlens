@@ -1,11 +1,12 @@
-# Next issue: Implement RunSession and subprocess runner (M1)
+# Next milestone: M2 strace and normalized events
 
-Goal: launch argv via subprocess without shell=True; record argv, cwd, PID,
-start/end monotonic times, exit status, and explicit signal names.
+M1 implementation: runner, periodic main-PID /proc sampling, private JSON/JSONL
+storage, list, inspect, and automated acceptance fixtures. Validate real Linux
+integration tests on Ubuntu 22.04 and review CI before claiming acceptance.
 
-Non-goals: strace, parser, capsule, diff, and C++.
+M2 scope: strace subprocess adapter, raw evidence preservation, a small syscall
+normalizer with source references, and parser golden cases. See the playbook.
+Do not add capsules, diff analysis, C++, or eBPF in this milestone.
 
-Acceptance: exit0, exit1, sleep, and signal termination fixtures produce correct
-results. Add /proc polling and JSON storage in subsequent scoped M1 work.
-
-This local issue draft does not create a GitHub repository or remote issue.
+Potential follow-ups outside M1: descendant accounting/cleanup, crash recovery,
+resource sampling benchmarks, and more collector compatibility fixtures.

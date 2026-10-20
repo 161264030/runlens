@@ -36,7 +36,7 @@ def check_environment(config: DoctorConfig | None = None) -> DoctorReport:
             "linux",
             system == "Linux",
             f"Detected platform: {system}",
-            "Use Linux (recommended: Ubuntu 24.04+) or WSL2." if system != "Linux" else "",
+            "Use Linux (supported target: Ubuntu 22.04) or WSL2." if system != "Linux" else "",
         )
     ]
     for tool in config.required_tools:
