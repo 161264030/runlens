@@ -35,6 +35,7 @@ def test_inaccessible_proc(monkeypatch, tmp_path, kind):
         if kind == "denied":
             monkeypatch.setattr("runlens.doctor.os.access", lambda *args: False)
         else:
+
             def denied(self):
                 raise PermissionError("permission denied")
 
